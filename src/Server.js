@@ -12,7 +12,7 @@ class Server {
     this._routes = {}
 
     this._server.on('request', (httpRequest, httpResponse) => {
-      const { method, url } = request
+      const { method, url } = httpRequest
 
       const request = new Request(httpRequest)
       const response = new Response(httpResponse)
