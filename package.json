@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/gabrielrufino/onemorerouter/issues"
   },
-  "homepage": "https://github.com/gabrielrufino/onemorerouter#readme"
+  "homepage": "https://github.com/gabrielrufino/onemorerouter#readme",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
 }
