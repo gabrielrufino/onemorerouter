@@ -18,8 +18,8 @@ class Server {
       const response = new Response(httpResponse)
 
       this._routes[url] &&
-      this._router[url][method] &&
-      this._router[url][method](request, response)
+      this._routes[url][method] &&
+      this._routes[url][method](request, response)
     })
   }
 
