@@ -10,7 +10,7 @@ class Request {
         this.body.push(chunk)
       })
       .on('end', () => {
-        this.body = Buffer.concat(body).toString()
+        this.body = Buffer.concat(this.body).toString()
       })
   }
 }
