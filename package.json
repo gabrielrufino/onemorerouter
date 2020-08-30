@@ -1,0 +1,27 @@
+{
+  "name": "onemorerouter",
+  "version": "0.0.1",
+  "description": "One More HTTP router for learning purpose (Don't use for production)",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielrufino/onemorerouter.git"
+  },
+  "keywords": [
+    "router",
+    "http",
+    "node",
+    "method",
+    "request",
+    "response"
+  ],
+  "author": "Gabriel Rufino <contato@gabrielrufino.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabrielrufino/onemorerouter/issues"
+  },
+  "homepage": "https://github.com/gabrielrufino/onemorerouter#readme"
+}
