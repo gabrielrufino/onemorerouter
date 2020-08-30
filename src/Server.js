@@ -27,7 +27,7 @@ class Server {
     if (this._routes[url]) {
       this._routes[url].GET = callback
     } else {
-      this.routes[url] = {
+      this._routes[url] = {
         GET: callback
       }
     }
@@ -37,7 +37,7 @@ class Server {
     if (this._routes[url]) {
       this._routes[url].POST = callback
     } else {
-      this.routes[url] = {
+      this._routes[url] = {
         POST: callback
       }
     }
@@ -47,7 +47,7 @@ class Server {
     if (this._routes[url]) {
       this._routes[url].PATCH = callback
     } else {
-      this.routes[url] = {
+      this._routes[url] = {
         PATCH: callback
       }
     }
@@ -57,7 +57,7 @@ class Server {
     if (this._routes[url]) {
       this._routes[url].PUT = callback
     } else {
-      this.routes[url] = {
+      this._routes[url] = {
         PUT: callback
       }
     }
@@ -67,7 +67,7 @@ class Server {
     if (this._routes[url]) {
       this._routes[url].DELETE = callback
     } else {
-      this.routes[url] = {
+      this._routes[url] = {
         DELETE: callback
       }
     }
