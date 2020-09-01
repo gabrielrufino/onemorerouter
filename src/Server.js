@@ -73,7 +73,7 @@ class Server {
     }
   }
 
-  listen (callback) {
+  start (callback) {
     this._server.listen(this._port, callback)
   }
 }
