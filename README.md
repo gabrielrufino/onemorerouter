@@ -21,5 +21,5 @@ server.get('/', (request, response) => {
   response.send('Hello, world!')
 })
 
-server.listen(() => console.log('Listening on 3000'))
+server.start(() => console.log('Listening on 3000'))
 ```
