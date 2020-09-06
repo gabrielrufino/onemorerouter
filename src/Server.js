@@ -73,8 +73,12 @@ class Server {
     }
   }
 
-  start (callback) {
-    this._server.listen(this._port, callback)
+  start () {
+    return new Promise((resolve, _reject) => {
+      this._server.listen(this._port, () => {
+        resolve()
+      })
+    })
   }
 }
 

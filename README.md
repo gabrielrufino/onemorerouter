@@ -18,8 +18,11 @@ const { Server } = require('onemorerouter')
 const server = new Server({ port: 3000 })
 
 server.get('/', (request, response) => {
-  response.send('Hello, world!')
+  response.send('Hello world!')
 })
 
-server.start(() => console.log('Listening on 3000'))
+server
+  .start()
+  .then(() => console.log('Listening on 3000'))
+
 ```
