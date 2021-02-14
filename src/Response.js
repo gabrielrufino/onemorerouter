@@ -20,6 +20,12 @@ class Response {
   send (data) {
     this._httpResponse.end(data)
   }
+
+  sendJSON(data) {
+    this._httpResponse.end(
+      JSON.stringify(data)
+    )
+  }
 }
 
 module.exports = Response
