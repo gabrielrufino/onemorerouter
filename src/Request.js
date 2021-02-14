@@ -1,3 +1,5 @@
+'use strict'
+
 class Request {
   constructor (httpRequest) {
     const { headers, method } = httpRequest

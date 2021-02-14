@@ -1,3 +1,5 @@
+'use strict'
+
 class Response {
   constructor (httpResponse) {
     this._httpResponse = httpResponse
