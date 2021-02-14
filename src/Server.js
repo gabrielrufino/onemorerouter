@@ -43,52 +43,37 @@ class Server {
   }
 
   get (url, callback) {
-    if (this._routes[url]) {
-      this._routes[url].GET = callback
-    } else {
-      this._routes[url] = {
-        GET: callback
-      }
+    this._routes[url] = {
+      ...this._routes[url],
+      GET: callback
     }
   }
 
   post (url, callback) {
-    if (this._routes[url]) {
-      this._routes[url].POST = callback
-    } else {
-      this._routes[url] = {
-        POST: callback
-      }
+    this._routes[url] = {
+      ...this._routes[url],
+      POST: callback
     }
   }
 
   patch (url, callback) {
-    if (this._routes[url]) {
-      this._routes[url].PATCH = callback
-    } else {
-      this._routes[url] = {
-        PATCH: callback
-      }
+    this._routes[url] = {
+      ...this._routes[url],
+      PATCH: callback
     }
   }
 
   put (url, callback) {
-    if (this._routes[url]) {
-      this._routes[url].PUT = callback
-    } else {
-      this._routes[url] = {
-        PUT: callback
-      }
+    this._routes[url] = {
+      ...this._routes[url],
+      PUT: callback
     }
   }
 
   delete (url, callback) {
-    if (this._routes[url]) {
-      this._routes[url].DELETE = callback
-    } else {
-      this._routes[url] = {
-        DELETE: callback
-      }
+    this._routes[url] = {
+      ...this._routes[url],
+      DELETE: callback
     }
   }
 
