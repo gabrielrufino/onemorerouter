@@ -13,6 +13,8 @@ class Response {
 
   setStatusCode(statusCode) {
     this._httpResponse.statusCode = statusCode
+
+    return this
   }
 
   send (data) {

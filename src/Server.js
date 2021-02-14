@@ -11,7 +11,13 @@ class Server {
 
     this._port = port
     this._server = http.createServer()
-    this._routes = {}
+    this._routes = {
+      default: ({ method, url }, response) => {
+        return response
+          .setStatusCode(404)
+          .send(`Route ${method} for ${url} not found`)
+      }
+    }
 
     this._server.on('request', (httpRequest, httpResponse) => {
       const { method, url } = httpRequest
@@ -19,9 +25,11 @@ class Server {
       const request = new Request(httpRequest)
       const response = new Response(httpResponse)
 
-      this._routes[url] &&
-      this._routes[url][method] &&
-      this._routes[url][method](request, response)
+      if (this._routes[url] && this._routes[url][method]) {
+        this._routes[url][method](request, response)
+      } else {
+        this._routes.default(request, response)
+      }
     })
   }
 

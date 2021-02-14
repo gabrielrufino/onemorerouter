@@ -2,9 +2,11 @@
 
 class Request {
   constructor (httpRequest) {
-    const { headers, method } = httpRequest
+    const { headers, method, url } = httpRequest
 
     this.headers = headers
+    this.method = method
+    this.url = url
 
     if (['POST', 'PUT', 'PATCH'].includes(method)) {
       this.body = []
