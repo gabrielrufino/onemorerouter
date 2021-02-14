@@ -20,16 +20,25 @@ class Server {
     }
 
     this._server.on('request', (httpRequest, httpResponse) => {
-      const { method, url } = httpRequest
+      const data = []
+      httpRequest
+        .on('data', chunk => data.push(chunk))
+        .on('end', () => {
+          const { headers, method, url } = httpRequest
 
-      const request = new Request(httpRequest)
-      const response = new Response(httpResponse)
+          let body = Buffer.concat(data).toString()
 
-      if (this._routes[url] && this._routes[url][method]) {
-        this._routes[url][method](request, response)
-      } else {
-        this._routes.default(request, response)
-      }
+          if (headers['Content-Type'] === 'application/json') body = JSON.parse(body)
+
+          const request = new Request({ ...httpRequest, body })
+          const response = new Response(httpResponse)
+
+          if (this._routes[url] && this._routes[url][method]) {
+            this._routes[url][method](request, response)
+          } else {
+            this._routes.default(request, response)
+          }
+        })
     })
   }
 
