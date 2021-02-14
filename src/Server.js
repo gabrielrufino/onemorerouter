@@ -28,7 +28,7 @@ class Server {
 
           let body = Buffer.concat(data).toString()
 
-          if (headers['Content-Type'] === 'application/json') body = JSON.parse(body)
+          if (headers['content-type'] === 'application/json') body = JSON.parse(body)
 
           const request = new Request({ ...httpRequest, body })
           const response = new Response(httpResponse)
