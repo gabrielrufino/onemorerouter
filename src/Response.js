@@ -11,7 +11,7 @@ class Response {
     return this
   }
 
-  setStatusCode(statusCode) {
+  setStatusCode (statusCode) {
     this._httpResponse.statusCode = statusCode
 
     return this
@@ -21,7 +21,7 @@ class Response {
     this._httpResponse.end(data)
   }
 
-  sendJSON(data) {
+  sendJSON (data) {
     this._httpResponse.end(
       JSON.stringify(data)
     )
