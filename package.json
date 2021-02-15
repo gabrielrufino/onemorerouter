@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "docs:generate": "npx jsdoc -d docs src"
+    "docs:generate": "npx jsdoc -d docs src",
+    "docs:serve": "npx http-server ./docs"
   },
   "repository": {
     "type": "git",
