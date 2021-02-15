@@ -4,7 +4,9 @@
   "description": "Just one More HTTP router for learning purpose (Don't use for production)",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "docs:generate": "npx jsdoc -d docs src",
+    "docs:serve": "npx http-server ./docs"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,8 @@
   },
   "homepage": "https://github.com/gabrielrufino/onemorerouter#readme",
   "devDependencies": {
-    "jest": "^26.6.3"
+    "http-server": "^0.12.3",
+    "jest": "^26.6.3",
+    "jsdoc": "^3.6.6"
   }
 }
