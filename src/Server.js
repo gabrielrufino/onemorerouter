@@ -5,7 +5,15 @@ const http = require('http')
 const Request = require('./Request')
 const Response = require('./Response')
 
+/**
+ * Represents the server
+ */
 class Server {
+  /**
+   * Creates a server
+   * @param {object} params
+   * @param {number} params.port - HTTP Port
+   */
   constructor (params) {
     const { port } = params
 
@@ -42,6 +50,11 @@ class Server {
     })
   }
 
+  /**
+   * Appends a new route using the method GET
+   * @param {string} url - Request URL
+   * @param {function} callback - Request handler
+   */
   get (url, callback) {
     this._routes[url] = {
       ...this._routes[url],
@@ -49,6 +62,11 @@ class Server {
     }
   }
 
+  /**
+   * Appends a new route using the method POST
+   * @param {string} url - Request URL
+   * @param {function} callback - Request handler
+   */
   post (url, callback) {
     this._routes[url] = {
       ...this._routes[url],
@@ -56,6 +74,11 @@ class Server {
     }
   }
 
+  /**
+   * Appends a new route using the method PATCH
+   * @param {string} url - Request URL
+   * @param {function} callback - Request handler
+   */
   patch (url, callback) {
     this._routes[url] = {
       ...this._routes[url],
@@ -63,6 +86,11 @@ class Server {
     }
   }
 
+  /**
+   * Appends a new route using the method PUT
+   * @param {string} url - Request URL
+   * @param {function} callback - Request handler
+   */
   put (url, callback) {
     this._routes[url] = {
       ...this._routes[url],
@@ -70,6 +98,11 @@ class Server {
     }
   }
 
+  /**
+   * Appends a new route using the method DELETE
+   * @param {string} url - Request URL
+   * @param {function} callback - Request handler
+   */
   delete (url, callback) {
     this._routes[url] = {
       ...this._routes[url],
@@ -77,6 +110,10 @@ class Server {
     }
   }
 
+  /**
+   * Starts the server
+   * @returns {Promise}
+   */
   start () {
     return new Promise((resolve, _reject) => {
       this._server.listen(this._port, () => {
