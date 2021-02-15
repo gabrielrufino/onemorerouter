@@ -6,8 +6,8 @@ const Request = require('./Request')
 const Response = require('./Response')
 
 class Server {
-  constructor (props) {
-    const { port } = props
+  constructor (params) {
+    const { port } = params
 
     this._port = port
     this._server = http.createServer()
