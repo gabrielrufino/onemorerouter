@@ -1,6 +1,6 @@
 {
   "name": "onemorerouter",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Just one More HTTP router for learning purpose (Don't use for production)",
   "main": "src/index.js",
   "scripts": {
